@@ -1312,6 +1312,87 @@ namespace implementation {
 		},
 	};
 
+	std::vector<std::string> cpu_sensors_parrot =
+	{
+		"cpu-0-0",
+		"cpu-0-1",
+		"cpu-0-2",
+		"cpu-0-3",
+		"cpu-1-0",
+		"cpu-1-2",
+		"cpu-1-4",
+		"cpu-1-6",
+	};
+
+	std::vector<struct target_therm_cfg>  parrot_common = {
+		{
+			TemperatureType::CPU,
+			cpu_sensors_parrot,
+			"",
+			95000,
+			115000,
+			95000,
+			true,
+		},
+		{
+			TemperatureType::GPU,
+			{ "gpuss-0" },
+			"GPU0",
+			95000,
+			115000,
+			95000,
+			true,
+		},
+		{
+			TemperatureType::GPU,
+			{ "gpuss-1" },
+			"GPU1",
+			95000,
+			115000,
+			95000,
+			true,
+		},
+		{
+			TemperatureType::NPU,
+			{ "nspss-0" },
+			"nsp0",
+			95000,
+			115000,
+			95000,
+			true,
+		},
+		{
+			TemperatureType::NPU,
+			{ "nspss-1" },
+			"nsp1",
+			95000,
+			115000,
+			95000,
+			true,
+		},
+	};
+
+	std::vector<struct target_therm_cfg>  parrot_specific = {
+		{
+			TemperatureType::BCL_CURRENT,
+			{ "pm7250b-ibat-lvl0" },
+			"ibat",
+			6000,
+			7500,
+			6000,
+			true,
+		},
+		{
+			TemperatureType::SKIN,
+			{ "xo-therm" },
+			"skin",
+			55000,
+			95000,
+			55000,
+			true,
+		},
+	};
+
 	struct target_therm_cfg bat_conf = {
 		TemperatureType::BATTERY,
 		{ "battery" },
@@ -1406,6 +1487,7 @@ namespace implementation {
 		{540, waipio_common}, // cape
 		{525, neo_common},
 		{554, neo_common},
+		{537, parrot_common},
 		{519, kalama_common}, //Kalama
 		{536, kalama_common}, //Kalamap
 		{600, kalama_common}, //Kalama_sg
@@ -1432,6 +1514,7 @@ namespace implementation {
 		{530, waipio_specific}, // cape
 		{531, waipio_specific}, // cape
 		{540, waipio_specific}, // cape
+		{537, parrot_specific},
 		{519, kalama_specific}, //Kalama
 		{536, kalama_specific}, //Kalamap
 		{600, kalama_specific}, //Kalama_sg
