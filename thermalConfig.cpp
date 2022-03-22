@@ -1482,6 +1482,8 @@ namespace implementation {
 		{482, waipio_common}, //Waipio
 		{552, waipio_common}, //Waipio-LTE
 		{506, waipio_common}, //diwali
+		{547, waipio_common}, //diwali
+		{564, waipio_common}, //diwali-LTE
 		{530, waipio_common}, // cape
 		{531, waipio_common}, // cape
 		{540, waipio_common}, // cape
@@ -1511,6 +1513,8 @@ namespace implementation {
 		{482, waipio_specific}, //Waipio
 		{552, waipio_specific}, //Waipio-LTE
 		{506, diwali_specific}, //diwali
+		{547, diwali_specific}, //diwali
+		{564, diwali_specific}, //diwali-LTE
 		{530, waipio_specific}, // cape
 		{531, waipio_specific}, // cape
 		{540, waipio_specific}, // cape
